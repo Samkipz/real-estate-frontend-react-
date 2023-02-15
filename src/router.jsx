@@ -1,11 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup";
 import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
-import DefaultLayout from "./components/DefaultLayout";
-import GuestLayout from "./components/GuestLayout";
+import DefaultLayout from "./components/DefaultLayout/DefaultLayout";
+import GuestLayout from "./components/GuestLayout/GuestLayout";
+import Homepage from "./pages/Homepage/Homepage";
+import AdminLogin from "./pages/Login/AdminLogin/AdminLogin";
+import TenantLogin from "./pages/Login/TenantLogin/TenantLogin";
+import ProjectAdmins from "./pages/Users/ProjectAdmins/ProjectAdmins";
 
 
 const router = createBrowserRouter([
@@ -14,16 +18,16 @@ const router = createBrowserRouter([
         element: <DefaultLayout />,
         children: [
             {
-                path: '/',
-                element: <Navigate to="/users" />
-            },
-            {
                 path: '/dashboard',
                 element: <Dashboard />
             },
             {
                 path: '/users',
                 element: <Users />
+            },
+            {
+                path: '/project-admins',
+                element: <ProjectAdmins />
             },
         ]
     },
@@ -32,13 +36,31 @@ const router = createBrowserRouter([
         element: <GuestLayout />,
         children: [
             {
-                path: '/login',
-                element: <Login />
+                path: '/home',
+                element: <Homepage />
             },
             {
-                path: '/signup',
-                element: <Signup />
-            }
+                path: '/login/admin',
+                element: <AdminLogin />
+            },
+            {
+                path: 'login/tenant',
+                element: <TenantLogin />
+            },
+            // {
+            //     // path: '/',
+            //     element: <Login />,
+            //     children: [
+            //         {
+            //             path: 'login/admin',
+            //             element: <AdminLogin />
+            //         },
+            //         {
+            //             path: 'login/tenant',
+            //             element: <TenantLogin />
+            //         },
+            //     ]
+            // }
         ]
     },
     {
