@@ -1,0 +1,76 @@
+@import '../../sass/_mixins';
+@import '../../sass/_variables';
+
+.homepage {
+    background-image: linear-gradient(to bottom right, #08090958, #08090958), url('../../assets/images/bgimage.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    font-family: $myFontQ;
+    margin: 0 !important;
+
+
+
+    & .logo-col {
+        height: 10vmax;
+        width: 2vmax;
+        // position: relative;
+
+        & img {
+
+            // position: absolute;
+            width: 60%;
+            height: 90%;
+        }
+    }
+
+    & .my-title {
+        font-size: 5vmin;
+        font-weight: 700;
+        text-align: center;
+        font-family: $myFontR;
+
+        // line-height: 5vmin;
+    }
+
+    & .mytext {
+        font-family: $myFontS;
+        font-size: 4vmax;
+    }
+
+    & .clearbg {
+        background-color: rgba(0, 0, 0, 0.457);
+        padding: 10% auto;
+    }
+
+    & .button-row {
+        gap: 3vmin;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5vmin;
+    }
+
+
+
+    // & .content-row {
+    //     margin-top: 5%;
+
+    //     & .special-col {
+    //         background-color: rgba(0, 0, 0, 0.457);
+    //         // padding: 4vmin;
+    //         position: relative;
+    //     }
+    // }
+
+    & .mybtn {
+        // border: 3px solid red;
+        border-radius: 0;
+        z-index: 99;
+        width: fit-content;
+
+    }
+}

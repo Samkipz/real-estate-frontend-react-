@@ -1,0 +1,65 @@
+@import '../../../sass/mixins';
+@import '../../../sass/_variables';
+
+.tenant-container {
+    // background-color: $black;
+    font-family: "Open Sans", sans-serif;
+    color: #272829;
+    margin: 0;
+    padding: 0;
+
+    a {
+        color: #820c2f;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #ff014f;
+        text-decoration: none;
+    }
+
+    a.nav-link:hover {
+        color: #ff014f;
+    }
+
+    a.nav-link {
+        color: #ba1144;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif;
+    }
+
+    .main-col {
+
+        height: 100vh;
+    }
+
+    .welcome-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .hello-text {
+        font-family: 'Noto';
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    .hello-text .sam {
+        color: #ff014f;
+    }
+
+    .mytext {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+}

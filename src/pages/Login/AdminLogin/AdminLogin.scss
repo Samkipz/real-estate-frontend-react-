@@ -1,0 +1,96 @@
+.admin-login {
+    & .row {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url('../../assets/images/adminLogin.jpeg');
+
+
+    & .admin-login-page {
+        background-color: black;
+        height: 100vh;
+        background-size: cover;
+        color: white;
+        // width: 905w;
+
+        // width: max-content;
+        opacity: 0.7;
+
+        & .loginForm {
+            background-color: black;
+            padding: 5% 10%;
+            opacity: 1;
+            border: 1px solid white;
+
+            & .mybtn {
+                border-radius: 0;
+                z-index: 99;
+                width: 100%;
+            }
+
+            & input[type=email] {
+                background-color: #1A2226;
+                border: none;
+                border-bottom: 2px solid #0DB8DE;
+                border-top: 0px;
+                border-radius: 0px;
+                font-weight: bold;
+                outline: 0;
+                padding-left: 0px;
+                // margin-bottom: 20px;
+                color: #ECF0F5;
+            }
+
+            & input[type=password] {
+                background-color: #1A2226;
+                border: none;
+                border-bottom: 2px solid #0DB8DE;
+                border-top: 0px;
+                border-radius: 0px;
+                font-weight: bold;
+                outline: 0;
+                padding-left: 0px;
+                // margin-bottom: 20px;
+                color: #ECF0F5;
+            }
+
+            & .form-group {
+                margin-bottom: 40px;
+                outline: 0px;
+            }
+
+            & .form-control :focus {
+                border-color: inherit;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-bottom: 2px solid #0DB8DE;
+                outline: 0;
+                background-color: #ECF0F5;
+                color: #1A2226;
+            }
+
+            & input:focus {
+                // border: 1px solid red !important;
+                outline: none;
+                box-shadow: 0 0 0;
+            }
+
+            & label {
+                margin-bottom: 0px;
+            }
+
+            & .form-control-label {
+                font-size: 10px;
+                color: #6C6C6C;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+        }
+    }
+}

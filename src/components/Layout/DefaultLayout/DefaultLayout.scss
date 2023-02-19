@@ -1,0 +1,16 @@
+.defaultLayout {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    .nav-col {
+        background-color: rgb(180, 175, 175);
+        margin: 5px 0 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    & .bg-dark {
+        height: 90vh;
+    }
+
+}
