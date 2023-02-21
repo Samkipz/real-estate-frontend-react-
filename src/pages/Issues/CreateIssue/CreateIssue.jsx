@@ -1,12 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './CreateIssue.scss'
 import { useForm } from 'react-hook-form'
 import axiosClient from '../../../axios-client';
 import ListIssues from '../ListIssues/ListIssues';
+import { useStateContext } from '../../../contexts/ContextProvider';
+import { toast } from 'react-toastify';
 
 function CreateIssue() {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  // const [isLoading, setisLoading] = useState(false)
+
+  const { user } = useStateContext({});
+  const [tenantIssues, setTenantIssues] = useState()
+
+  // console.log(user.id)
+
+  useEffect(() => {
+    axiosClient.get(`/issue/creator-id/${user.id}`)
+      .then(({ data }) => {
+        setTenantIssues(data)
+        // toast.success("Fetch Success")
+      }).catch(error => {
+        // toast.error(error.message);
+      })
+  }, [])
+
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" }
+    return new Date(dateString).toLocaleDateString(undefined, options)
+  }
+
+
+
+  tenantIssues && console.log(tenantIssues)
+
+
   const onSubmit = data => {
     axiosClient.post('/issue',
       data,
@@ -15,6 +44,7 @@ function CreateIssue() {
       })
       .then(({ data }) => {
         console.log(data)
+        toast.success("Issue succesfully submitted for review")
       })
   };
 
@@ -106,7 +136,28 @@ function CreateIssue() {
               </div>
               <div className="comment-widgets scrollable issue">
 
-                <a href="#" className='text-decoration-none mb-2 '>
+                {tenantIssues ? tenantIssues.map((item) => (
+
+                  <a href="#" key={item.id} className='text-decoration-none text-black mb-2 '>
+                    <div className="d-flex flex-row comment-row m-t-0 ">
+                      <div className="comment-text w-100 p-3">
+                        <h6 className="font-medium"> <b>{item.title}</b></h6>
+                        <span className="m-b-15 d-block">{item.description}</span>
+                        <div
+                          className="comment-footer d-flex flex-row justify-content-between align-items-end">
+
+                          <div className="text-muted float-right">{formatDate(item.created_at)}</div>
+                          <button type="button" className="btn btn-danger btn-sm">Mark as resolved</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  // <option key={item.id} value={item.id}>{item.name}</option>
+                )) : null}
+
+                {/* <a href="#" className='text-decoration-none mb-2 '>
                   <div className="d-flex flex-row comment-row m-t-0 ">
                     <div className="comment-text w-100 p-3">
                       <h6 className="font-medium">Floor Remodelling</h6>
@@ -120,9 +171,9 @@ function CreateIssue() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </a> */}
 
-                <a href="#" className='text-decoration-none text-secondary mb-2'>
+                {/* <a href="#" className='text-decoration-none text-secondary mb-2'>
                   <div className="d-flex flex-row comment-row m-t-0">
                     <div className="comment-text w-100 p-3">
                       <h6 className="font-medium">Floor Remodelling</h6>
@@ -136,9 +187,9 @@ function CreateIssue() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </a> */}
 
-                <a href="#" className='text-decoration-none text-secondary mb-2'>
+                {/* <a href="#" className='text-decoration-none text-secondary mb-2'>
                   <div className="d-flex flex-row comment-row m-t-0">
                     <div className="comment-text w-100 p-3">
                       <h6 className="font-medium">Floor Remodelling</h6>
@@ -152,7 +203,7 @@ function CreateIssue() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </a> */}
               </div>
             </div>
 

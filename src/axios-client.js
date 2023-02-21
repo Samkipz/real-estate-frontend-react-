@@ -17,7 +17,6 @@ axiosClient.interceptors.response.use((response) => {
     return response
 }, (error) => {
     const { response } = error;
-    console.log(error)
     if (response.status === 401) {
         //user is unauthorized
         localStorage.removeItem('ACCESS_TOKEN')

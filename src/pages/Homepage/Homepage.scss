@@ -2,7 +2,7 @@
 @import '../../sass/_variables';
 
 .homepage {
-    background-image: linear-gradient(to bottom right, #08090958, #08090958), url('../../assets/images/bgimage.png');
+    background-image: linear-gradient(to bottom right, #08090999, #08090961), url('../../assets/images/bgimage.jpg');
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
@@ -33,8 +33,6 @@
         font-weight: 700;
         text-align: center;
         font-family: $myFontR;
-
-        // line-height: 5vmin;
     }
 
     & .mytext {
@@ -54,23 +52,12 @@
         margin-top: 5vmin;
     }
 
-
-
-    // & .content-row {
-    //     margin-top: 5%;
-
-    //     & .special-col {
-    //         background-color: rgba(0, 0, 0, 0.457);
-    //         // padding: 4vmin;
-    //         position: relative;
-    //     }
-    // }
-
     & .mybtn {
         // border: 3px solid red;
         border-radius: 0;
         z-index: 99;
         width: fit-content;
+        padding: 8px;
 
     }
 }

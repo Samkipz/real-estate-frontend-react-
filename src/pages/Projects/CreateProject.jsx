@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input, FormFeedback, FormText, Col, Button } fr
 import axiosClient from '../../axios-client';
 import axios from 'axios';
 baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`
+import { toast } from 'react-toastify';
 
 
 
@@ -48,9 +49,8 @@ export default class CreateProject extends React.Component {
 
         axiosClient.post('/project', payload)
             .then(({ data }) => {
-                console.log(data)
+                toast.success("A new project has been added to the database")
             })
-
         console.log(payload)
 
     }
@@ -97,7 +97,7 @@ export default class CreateProject extends React.Component {
                             </FormText>
                         </FormGroup>
 
-                        <Button color="secondary" size="md" block>Create User</Button>
+                        <Button color="secondary" size="md" block>Create Project</Button>
 
                     </Form>
                 </div>

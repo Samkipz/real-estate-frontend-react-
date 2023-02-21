@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Col, Button } from 'reactstrap';
 import axiosClient from '../../axios-client';
+import { toast } from 'react-toastify';
 
 export class AddUser extends Component {
     constructor(props) {
@@ -12,53 +13,6 @@ export class AddUser extends Component {
             validate: {
                 emailState: '',
             }
-            // realEstates: [
-            //     {
-            //         "id": 1,
-            //         "name": "Alma",
-            //         "units": [
-            //             {
-            //                 "id": 1,
-            //                 "name": "Apartment A"
-            //             },
-            //             {
-            //                 "id": 2,
-            //                 "name": "Apartment b"
-            //             },
-
-            //         ]
-            //     },
-            //     {
-            //         "id": 2,
-            //         "name": "Taraji",
-            //         "units": [
-            //             {
-            //                 "id": 1,
-            //                 "name": "Apartment A"
-            //             },
-            //             {
-            //                 "id": 2,
-            //                 "name": "Apartment b"
-            //             },
-
-            //         ]
-            //     },
-            //     {
-            //         "id": 3,
-            //         "name": "Cysuites",
-            //         "units": [
-            //             {
-            //                 "id": 1,
-            //                 "name": "Apartment A"
-            //             },
-            //             {
-            //                 "id": 2,
-            //                 "name": "Apartment b"
-            //             },
-
-            //         ]
-            //     },
-            // ]
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -105,7 +59,7 @@ export class AddUser extends Component {
 
         axiosClient.post('/users', payload)
             .then(({ data }) => {
-                console.log(data)
+                toast.success("New User added and Credentials Email send")
             })
 
     }

@@ -33,7 +33,7 @@ function AdminSidebar() {
 
                             </li>
                             <li>
-                                <Link className="nav-link px-0 align-middle" to="#">
+                                <Link className="nav-link px-0 align-middle" to="roles-permission">
                                     <FaChalkboardTeacher /><span className="ms-1 d-none d-sm-inline">Roles</span></Link>
                             </li>
                         </ul>

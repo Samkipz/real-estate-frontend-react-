@@ -20,18 +20,6 @@ function Homepage() {
           }
           navigate("/dashboard")
         })
-
-      // role && role === 'tenant' ? navigate("/tenant-dashboard") : navigate("/dashboard")
-      // role && role === 'tenant' ? alert('tenant -- going to - tenant-dashboard') : alert('admin -- going to - admin-dashboard')
-
-      // if (role && role === 'tenant') {
-      //     console.log(role)
-      //     return navigate("/tenant-dashboard")
-      // }
-      // if (role && role === 'super-admin' || role === 'project-admin') {
-      //     console.log(role)
-      //     return navigate("/dashboard")
-      // }
     }
   }, []);
   return (
@@ -41,7 +29,7 @@ function Homepage() {
           <div className="col d-flex flex-row align-items-center justify-content-start logo-col">
             <img src='/assets/images/logo.png' alt='' />
           </div>
-          <div className="col-6 d-flex align-items-center justify-content-center my-title"> Oaks Property Management</div>
+          <div className="col-6 d-flex align-items-center justify-content-center my-title"> <u>Oaks Property Management</u> </div>
           <div className="col"></div>
         </div>
         <div className="clearbg">
@@ -59,8 +47,8 @@ function Homepage() {
             <div className="row my-4 p-2 ">
 
               <div className="col d-flex justify-content-center button-row">
-                <Link className="btn btn-warning mybtn " to='/login/tenant'> Log in as Tenant </Link>
-                <Link className="btn btn-danger mybtn " to='/login/admin'> Log in as Admin </Link>
+                <Link className="btn btn-outline-warning mybtn " to='/login/tenant'> Log in to Proceed </Link>
+                {/* <Link className="btn btn-danger mybtn " to='/login/admin'> Log in as Admin </Link> */}
               </div>
 
             </div>
